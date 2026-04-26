@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李尚杰的网站</title>
+    <style>
+        #login { display: block; }
+        #main { display: none; }
+        .section { display: none; }
+        #home { display: block; }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h2>请输入账号和密码</h2>
+        <input type="text" id="username" placeholder="用户名">
+        <input type="password" id="password" placeholder="密码">
+        <button onclick="checkPassword()">进入</button>
+    </div>
+    <div id="main">
+        <nav>
+            <button onclick="showSection('home')">首页</button>
+            <button onclick="showSection('about')">关于我</button>
+            <button onclick="showSection('message')">留言板</button>
+        </nav>
+        <div id="home" class="section">
+            <h1>欢迎进入我的网站</h1>
+            <p>这里是首页，专注于代码和编程。</p>
+            <h2>什么是编程？</h2>
+            <p>编程是使用编程语言编写指令来让计算机执行任务的过程。它是现代科技的基础，从网站开发到人工智能应用。</p>
+            <h2>基本代码示例</h2>
+            <p>以下是一个简单的Python代码示例：</p>
+            <pre><code>print("Hello, World!")</code></pre>
+            <p>这个代码会输出"Hello, World!"到控制台。</p>
+            <h2>为什么学习编程？</h2>
+            <ul>
+                <li>提高逻辑思维能力</li>
+                <li>创造自己的项目</li>
+                <li>就业机会多</li>
+            </ul>
+        </div>
+        <div id="about" class="section" style="display: none;">
+            <h1>关于我</h1>
+            <p>这里是关于我的信息。</p>
+        </div>
+        <div id="message" class="section" style="display: none;">
+            <h1>留言板</h1>
+            <p>这里是留言板。</p>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === 'admin' && password === '123456') { // 替换为您的账号和密码
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('main').style.display = 'block';
+            } else {
+                alert('账号或密码错误');
+            }
+        }
+    </script>
+</body>
+</html>
